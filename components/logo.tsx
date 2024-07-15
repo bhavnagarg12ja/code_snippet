@@ -4,7 +4,7 @@ import { mainColor } from '@/Colors';
 export const Logo = () => {
   return (
     <div className="flex gap-2 items-center">
-      <div className="bg-purple-600 p-2 rounded-md">
+      <div className={`bg-${mainColor} p-2 rounded-md`}>
         <DataObjectOutlinedIcon sx={{ fontSize: 27, color: 'white' }} />
       </div>
       <div className="flex gap-1 text-[19px]">

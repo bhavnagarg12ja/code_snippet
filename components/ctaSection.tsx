@@ -5,7 +5,7 @@ export const CtaSection = () => {
     <div className="flex flex-col mx-16 items-center mt-[120px] gap-6">
       <h2 className="font-bold text-center text-2xl">
         Organize Your Code Snippets
-        <span className={`text-${mainColor}`}> Efficiently</span>
+        <span className={`text-${mainColor}`}> Efficiently!</span>
       </h2>
       <p className="text-center text-sm w-[450px] max-sm:w-full text-slate-500">
         With our advanced tagging and search features, you can quickly find the
