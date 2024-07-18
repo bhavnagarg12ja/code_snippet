@@ -7,3 +7,5 @@ async function connect(): Promise<void> {
     console.error(error);
   }
 }
+
+export default connect();
