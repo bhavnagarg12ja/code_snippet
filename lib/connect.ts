@@ -8,4 +8,4 @@ async function connect(): Promise<void> {
   }
 }
 
-export default connect();
+export default connect;
