@@ -8,6 +8,7 @@ import connect from '@/lib/connect';
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
+  console.log(WEBHOOK_SECRET);
 
   if (!WEBHOOK_SECRET) {
     throw new Error(
@@ -55,7 +56,7 @@ export async function POST(req: Request) {
   // For this guide, you simply log the payload to the console
   const { id } = evt.data;
   const eventType = evt.type;
-
+  console.log(eventType);
   if (eventType === 'user.created') {
     const { id, email_addresses } = evt.data;
 
@@ -64,11 +65,15 @@ export async function POST(req: Request) {
       emailAddress: email_addresses[0].email_address,
     };
 
+    console.log(newUser);
+
     try {
       await connect();
       await User.create(newUser);
       console.log('user created');
-    } catch (error) {}
+    } catch (error) {
+      console.error('ERROR WHILE CREATING USER :: ' + error);
+    }
   }
   console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
   console.log('Webhook body:', body);
