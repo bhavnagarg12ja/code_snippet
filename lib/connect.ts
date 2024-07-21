@@ -1,9 +1,7 @@
 import mongoose from 'mongoose';
 async function connect(): Promise<void> {
   try {
-    await mongoose.connect(
-      'mongodb+srv://bhavnagarg12ja:bhavnagarg12ja@cluster0.zdyihlz.mongodb.net/SNIPPETMASTER'
-    );
+    await mongoose.connect(process.env.MONGODB_URL as string);
     console.log('db connected..');
   } catch (error) {
     console.error(error);

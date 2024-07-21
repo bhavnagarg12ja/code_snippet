@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { Document, Schema } from 'mongoose';
 const userSchema = new mongoose.Schema(
   {
     clerkUserId: { type: String, unique: true, required: true },
