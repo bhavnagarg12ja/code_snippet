@@ -1,9 +1,20 @@
+'use-server';
 import { Webhook } from 'svix';
 import { headers } from 'next/headers';
 import { EmailAddress, WebhookEvent } from '@clerk/nextjs/server';
 
 import User from '@/Models/UserSchema';
 import connect from '@/lib/connect';
+
+// export async function createUser(user: any) {
+//   try {
+//     await connect();
+//     const newUser = await User.create(user);
+//     return JSON.parse(JSON.stringify(newUser));
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
